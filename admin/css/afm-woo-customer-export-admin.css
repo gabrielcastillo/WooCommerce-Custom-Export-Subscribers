@@ -1,0 +1,40 @@
+/**
+ * All of the CSS for your admin-specific functionality should be
+ * included in this file.
+ */
+
+
+.ncgasa-app {
+	background: #e9e2d5;
+	display:flex;
+	min-height: 90vh;
+	overflow:scroll;
+	border:1px solid #74716a;
+}
+
+.ncgasa-sidebar {
+	background: #f1eadd;
+	border-right: 1px solid #fcf6e9;
+	padding: .75rem;
+	flex-shrink: 0;
+	width: 200px;
+}
+
+.ncgasa-content {
+	flex-grow: 1;
+  	border-left: 1px solid #d1cbbf;
+  	height:80vh;
+  	overflow:scroll;
+}
+
+.ncgasa-content .subscription_list_table {
+	background:#f0f0f0;
+}
+
+
+
+.input-group {
+	display:flex; 
+	flex-direction:column;
+	margin-bottom: .75rem;
+}
