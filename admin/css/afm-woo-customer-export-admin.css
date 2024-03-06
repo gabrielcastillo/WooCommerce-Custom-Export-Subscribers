@@ -32,9 +32,17 @@
 }
 
 
-
 .input-group {
 	display:flex; 
 	flex-direction:column;
 	margin-bottom: .75rem;
+}
+
+.errors ul li {
+	background: #ff0000;
+	display:flex;
+	width:100%;
+	flex-direction: column;
+	color:#ffffff;
+	padding:6px 8px;
 }

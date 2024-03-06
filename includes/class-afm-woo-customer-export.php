@@ -116,6 +116,8 @@ class Afm_Woo_Customer_Export {
 
 		$this->loader = new Afm_Woo_Customer_Export_Loader();
 
+		require_once( ABSPATH . 'wp-admin/includes/file.php' );
+
 	}
 
 	/**
@@ -152,6 +154,7 @@ class Afm_Woo_Customer_Export {
 		$this->loader->add_action( 'admin_menu', $plugin_admin, 'ncgasa_register_admin_page' );
 
 		$this->loader->add_action( 'admin_post_ncgasa_export_csv_file', $plugin_admin, 'ncgasa_export_csv_file');
+		$this->loader->add_action( 'admin_post_ncgasa_import_subscribers', $plugin_admin, 'ncgasa_import_subscribers_handler' );
 	
 
 	}
