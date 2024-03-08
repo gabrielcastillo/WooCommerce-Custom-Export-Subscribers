@@ -24,7 +24,6 @@
 	flex-grow: 1;
   	border-left: 1px solid #d1cbbf;
   	height:80vh;
-  	overflow:scroll;
 }
 
 .ncgasa-content .subscription_list_table {
@@ -39,10 +38,15 @@
 }
 
 .errors ul li {
-	background: #ff0000;
-	display:flex;
-	width:100%;
+	background: #ee5d5d;
+	display: flex;
+	width: 100%;
 	flex-direction: column;
-	color:#ffffff;
-	padding:6px 8px;
+	color: #f0f0f0;
+	padding: 6px 8px;
+	border: 1px solid #fff;
+}
+
+.table {
+	background-color:#ffffff;
 }
