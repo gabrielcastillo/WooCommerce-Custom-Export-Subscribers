@@ -551,7 +551,7 @@ class Afm_Woo_Customer_Export_Admin
 	 * @return array|bool
 	 * @throws Exception
 	 */
-    private function ncgasa_convert_csv_file(mixed $file): array|WP_Error
+    private function ncgasa_convert_csv_file(mixed $file)
     {
 	    $column_headers = [];
         $subscribers = [];
@@ -876,7 +876,7 @@ class Afm_Woo_Customer_Export_Admin
      *
      * @return array|bool
      */
-    final public function ncgasa_get_subscriber_list( string $from_date, string $to_date ): array|bool {
+    final public function ncgasa_get_subscriber_list( string $from_date, string $to_date ) {
         $sql = "SELECT
 			        p.ID as order_id,
 			        p.post_date,
