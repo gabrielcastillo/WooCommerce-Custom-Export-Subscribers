@@ -789,7 +789,7 @@ class Afm_Woo_Customer_Export_Admin
 	 *
 	 * @return mixed
 	 */
-    final public function ncgasa_get_product_variation_by_product_id( int|string $product_id, array $subscriber ): mixed {
+    final public function ncgasa_get_product_variation_by_product_id( string $product_id, array $subscriber ): mixed {
         $variation_id = "";
         $product_variation_list = $this->ncgasa_get_product_variations(
             $product_id
