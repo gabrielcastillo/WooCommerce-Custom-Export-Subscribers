@@ -551,7 +551,7 @@ class Afm_Woo_Customer_Export_Admin
 	 * @return array|bool
 	 * @throws Exception
 	 */
-    private function ncgasa_convert_csv_file(mixed $file)
+    private function ncgasa_convert_csv_file($file)
     {
 	    $column_headers = [];
         $subscribers = [];
@@ -597,25 +597,46 @@ class Afm_Woo_Customer_Export_Admin
                     }
 
                     foreach ( $subscribers as $subscriber ) {
+
                         if ( ! array_key_exists( 'first_name', $subscriber ) ) {
-                            $this->errors->add('first_name', 'First name is required' );
+                            $this->errors->add('first_name', 'First name column is required' );
+                        } else {
+                            if ( empty( $data[$idx] ) ) {
+                                $this->errors->add('first_name', 'First name is required.');
+                            }
                         }
 
 	                    if ( ! array_key_exists( 'last_name', $subscriber ) ) {
-		                    $this->errors->add('last_name', 'Last name is required' );
-	                    }
+		                    $this->errors->add('last_name', 'Last name column is required' );
+	                    } else {
+                            if ( empty( $data[$idx] ) ) {
+                                $this->errors->add('last_name', 'Last name is required.');
+                            }
+                        }
 
                         if ( ! array_key_exists( 'email', $subscriber ) ) {
-                            $this->errors->add( 'email', 'Email is required' );
+                            $this->errors->add( 'email', 'Email column is required' );
+                        } else {
+                            if ( empty( $data[$idx] ) ) {
+                                $this->errors->add('email', 'First name is required.');
+                            }
                         }
 
 	                    if ( ! array_key_exists( 'payment_date', $subscriber ) ) {
-		                    $this->errors->add( 'payment_date', 'Payment date is required' );
-	                    }
+		                    $this->errors->add( 'payment_date', 'Payment date column is required' );
+	                    } else {
+                            if ( empty( $data[$idx] ) ) {
+                                $this->errors->add('payment_date', 'Payment date is required.');
+                            }
+                        }
 
 	                    if ( ! array_key_exists( 'membership', $subscriber ) ) {
-		                    $this->errors->add( 'membership', 'Membership is required' );
-	                    }
+		                    $this->errors->add( 'membership', 'Membership column is required' );
+	                    } else {
+                            if ( empty( $data[$idx] ) ) {
+                                $this->errors->add('membership', 'Membership type is required.');
+                            }
+                        }
                     }
 
                     if ( count( $this->errors->get_error_codes() ) ) {
@@ -1001,7 +1022,7 @@ class Afm_Woo_Customer_Export_Admin
      * Handle form request, clean sanitize data, get subscriber list
      * @return void
      */
-    private function ncgasa_export_csv_file(): void
+    final public function ncgasa_export_csv_file(): void
     {
         if (
             isset($_POST["ncgasa_admin_nonce"]) &&
